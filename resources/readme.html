@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Readme</title>
+</head>
+<p>
+<h1>Documentación</h1>
+
+<h2>Explicación de la logica usada</h2>
+<p><b>Codigo fuente: https://bitbucket.org/macetosella/uca-test/src/master/</b></p>
+<p>Se creó la clase CallDispacher que vendría a ser un deamon que recibe llamadas y se le asignan empleados,
+asincrónicamente va asignando los llamados en espera a los empleados disponibles quienes van a atender dichos llamados.</p>
+<p>Cuando un empleado termina de atender una llamada se vuelve a cargar ese tipo de empleado a la cola de empleadosDisponibles.</p>
+<p>Para la cola de llamadas se utiliza java.util.concurrent.LinkedBlockingQueue.LinkedBlockingQueue que es una implementación de BlockingQueue y se caracteriza por mantener el hilo a la espera cuando se quiere sacar un elemento de una cola vacía.</p>
+<p>Para la cola de empleadosDisponibles utilicé java.util.concurrent.PriorityBlockingQueue.PriorityBlockingQueue que la única diferencia con la de llamadas es que está priorizada para que tome primero a los Operadores, luego a los Supervisores y por ultimo a los Directores.</p>
+
+<h2>Diagrama UML</h2>
+<img src="UML.png">
+</body>
+</html>
